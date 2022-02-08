@@ -16,4 +16,11 @@ typedef struct s_stacks{
 	int				stack_size;
 }				t_stacks;
 
+// -------------------------------------------- UTILS
+// list_utils.c
+t_doubly_list	*ft_doubly_lstlast(t_doubly_list *lst);
+void			*ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new);
+void			ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new);
+t_doubly_list	*ft_doubly_lstnew(int content);
+
 #endif
