@@ -1,0 +1,19 @@
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include "libft.h"
+# include <stdio.h>
+
+typedef struct s_doubly_list{
+	int		content;
+	struct s_doubly_list	*next;
+	struct s_doubly_list	*prev;
+}				t_doubly_list;
+
+typedef struct s_stacks{
+	t_doubly_list	*stack_a;
+	t_doubly_list	*stack_b;
+	int				stack_size;
+}				t_stacks;
+
+#endif
