@@ -17,7 +17,7 @@ void	ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new)
 	}
 }
 
-t_doubly_list	*ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new)
+void	*ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new)
 {
 	t_doubly_list	*aux;
 
@@ -43,4 +43,18 @@ t_doubly_list	*ft_doubly_lstlast(t_doubly_list *lst)
 		return (lst);
 	}
 	return (NULL);
+}
+
+t_doubly_list	*ft_doubly_lstnew(int content)
+{
+	t_doubly_list	*element;
+
+	element = (t_doubly_list *) malloc(sizeof(t_doubly_list));
+	if (element)
+	{
+		element->content = content;
+		element->next = NULL;
+		element->prev = NULL;
+	}
+	return (element);
 }
