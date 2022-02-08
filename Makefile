@@ -13,7 +13,7 @@ LIBFT	= $(LIBFT_PATH)/libft.a
 LIBFT_FLAGS = -L$(LIBFT_PATH) -lft
 INCLUDES	= $(addprefix -I,$(INCLUDES_DIR))
 
-SRCS	= push_swap.c
+SRCS	= push_swap.c list_utils.c
 SRCS	+=
 SRCS	+=
 
