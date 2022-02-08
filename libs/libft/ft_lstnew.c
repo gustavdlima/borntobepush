@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gusalves <gusalves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 09:28:19 by gusalves          #+#    #+#             */
-/*   Updated: 2021/08/18 15:17:00 by gusalves         ###   ########.fr       */
+/*   Updated: 2022/02/08 16:20:13 by roaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ t_list	*ft_lstnew(void *content)
 		element->content = content;
 		element->next = NULL;
 	}
-	return (NULL);
+	return (element);
 }
