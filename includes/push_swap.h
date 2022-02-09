@@ -41,9 +41,11 @@ void	push_swap(t_stacks *stacks);
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c
 void	sa(t_stacks *stacks);
+void	sb(t_stacks *stacks);
+void	ss(t_stacks *stacks);
 
 // -------------------------------------------- PRA DELETAR DEPOIS
 void	print_stack(t_doubly_list *stack);
-
+void	print_stacks(t_stacks *stacks);
 
 #endif
