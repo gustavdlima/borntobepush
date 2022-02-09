@@ -4,7 +4,29 @@
 	the top of a. Do nothing if b is empty. */
 void	pa(t_stacks *stacks)
 {
+	t_doubly_list	*first_element_stack_b;
+	t_doubly_list	*old_stack_a;
 
+	if (!stacks->stack_a)
+		return ;
+	first_element_stack_b = stacks->stack_a;
+	stacks->stack_a = stacks->stack_a->next;
+	if (ft_doubly_lstsize(stacks->stack_a) > 0)
+		stacks->stack_a->prev = NULL;
+	first_element_stack_b->next = NULL;
+	if (!stacks->stack_b)
+	{
+		stacks->stack_b = first_element_stack_b;
+		stacks->stack_b->next = NULL;
+		stacks->stack_b->prev = NULL;
+	}
+	else
+	{
+		old_stack_a = stacks->stack_b;
+		stacks->stack_b = first_element_stack_b;
+		stacks->stack_b->next = old_stack_a;
+		old_stack_a->prev = stacks->stack_b;
+	}
 }
 
 /* push b - take the first element at the top of a and put it at
