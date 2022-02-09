@@ -35,12 +35,12 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 			ft_doubly_lstadd_back(&(stacks->stack_a), ft_doubly_lstnew(ft_atoi(argv[i])));
 			i++;
 		}
-		i = 10;
-		while (i < 12)
-		{
-			ft_doubly_lstadd_back(&(stacks->stack_b), ft_doubly_lstnew(i));
-			i++;
-		}
+		// i = 10;
+		// while (i < 12)
+		// {
+		// 	ft_doubly_lstadd_back(&(stacks->stack_b), ft_doubly_lstnew(i));
+		// 	i++;
+		// }
 
 	// }
 	// free(split_args);

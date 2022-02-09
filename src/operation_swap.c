@@ -8,6 +8,8 @@ void	sa(t_stacks *stacks)
 	t_doubly_list	*new_second;
 	t_doubly_list	*third;
 
+	if (ft_doubly_lstsize(stacks->stack_a) < 2)
+		return ;
 	new_second = stacks->stack_a;
 	third = stacks->stack_a->next->next;
 	stacks->stack_a = stacks->stack_a->next;
@@ -27,6 +29,8 @@ void	sb(t_stacks *stacks)
 	t_doubly_list	*new_second;
 	t_doubly_list	*third;
 
+	if (ft_doubly_lstsize(stacks->stack_b) < 2)
+		return ;
 	new_second = stacks->stack_b;
 	third = stacks->stack_b->next->next;
 	stacks->stack_b = stacks->stack_b->next;
@@ -45,6 +49,9 @@ void	ss(t_stacks *stacks)
 	t_doubly_list	*new_second;
 	t_doubly_list	*third;
 
+	if (ft_doubly_lstsize(stacks->stack_b) < 2
+		|| ft_doubly_lstsize(stacks->stack_a) < 2)
+		return ;
 	new_second = stacks->stack_a;
 	third = stacks->stack_a->next->next;
 	stacks->stack_a = stacks->stack_a->next;
