@@ -36,7 +36,7 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 			i++;
 		}
 		// i = 10;
-		// while (i < 12)
+		// while (i < 15)
 		// {
 		// 	ft_doubly_lstadd_back(&(stacks->stack_b), ft_doubly_lstnew(i));
 		// 	i++;

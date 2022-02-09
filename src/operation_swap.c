@@ -19,7 +19,7 @@ void	sa(t_stacks *stacks)
 	new_second->prev = stacks->stack_a;
 	if (third)
 		third->prev = stacks->stack_a->next;
-	ft_putendl_fd("\n--------- sa operation ---------\n", 1);
+	ft_putendl_fd("sa", 1);
 }
 
 /* sb : swap b - swap the first 2 elements at the top of stack b.

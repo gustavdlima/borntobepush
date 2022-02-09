@@ -27,6 +27,7 @@ void	pa(t_stacks *stacks)
 		stacks->stack_b->next = old_stack_a;
 		old_stack_a->prev = stacks->stack_b;
 	}
+	ft_putendl_fd("pa", 1);
 }
 
 /* push b - take the first element at the top of a and put it at
@@ -56,4 +57,5 @@ void	pb(t_stacks *stacks)
 		stacks->stack_b->next = old_stack_b;
 		old_stack_b->prev = stacks->stack_b;
 	}
+	ft_putendl_fd("pb", 1);
 }

@@ -50,6 +50,7 @@ void	pb(t_stacks *stacks);
 
 // operation_rotate.c
 void	ra(t_stacks *stacks);
+void	rb(t_stacks *stacks);
 
 // -------------------------------------------- PRA DELETAR DEPOIS
 void	print_stack(t_doubly_list *stack);
