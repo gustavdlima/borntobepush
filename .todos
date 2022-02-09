@@ -1,6 +1,7 @@
-[ ] terminar operações: ra rb rr
+[x] terminar operações: ra rb rr
 	rods
 [ ] terminar operações: rra rrb rrr
+	rods
 [ ] Liberar memória
 [ ] Validar Duplicatas
 [ ] Validar se argv é numérico

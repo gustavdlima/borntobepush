@@ -16,6 +16,15 @@ void	rra(t_stacks *stacks)
 
 void	rrb(t_stacks *stacks)
 {
+	t_doubly_list	*last_element;
+
+	if (stacks->stack_b->next == NULL)
+		return ;
+	last_element = ft_doubly_lstlast(stacks->stack_b);
+	last_element->prev->next = NULL;
+	last_element->prev = NULL;
+	ft_doubly_lstadd_front(&(stacks->stack_b), last_element);
+	ft_putendl_fd("rrb", 1);
 	return ;
 }
 
