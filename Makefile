@@ -14,7 +14,7 @@ LIBFT_FLAGS = -L$(LIBFT_PATH) -lft
 INCLUDES	= $(addprefix -I,$(INCLUDES_DIR))
 
 SRCS	= push_swap.c push_swap_utils.c list_utils.c validation_utils.c
-SRCS	+= tests.c
+SRCS	+= operation_swap.c tests.c
 SRCS	+=
 
 OBJS	:= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))

@@ -37,7 +37,12 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[]);
 // push_swap.c
 void	push_swap(t_stacks *stacks);
 
+// -------------------------------------------- OPERATION SWAP
+// operations_swap.c
+void	sa(t_stacks *stacks);
+
 // -------------------------------------------- PRA DELETAR DEPOIS
 void	print_stack(t_doubly_list *stack);
+
 
 #endif

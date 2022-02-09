@@ -3,6 +3,8 @@
 void	push_swap(t_stacks *stacks)
 {
 	print_stack(stacks->stack_a);
+	sa(stacks);
+	print_stack(stacks->stack_a);
 }
 
 int	main(int argc, char **argv)
