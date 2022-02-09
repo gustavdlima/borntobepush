@@ -30,7 +30,7 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 	// {
 		// monta a stack a;
 		if(!validate_is_range_int(argc, argv) || !validate_is_all_digit(argc, argv))
-			return (write(1, BOLDRED"Numeros maiores que INT ou contem strings\n"RESET, 69));
+			return (printf(BOLDRED"Numeros maiores que INT ou contem strings\n"RESET));
 		initialise(stacks);
 		i = 1;
 		while (argv[i])
@@ -55,12 +55,14 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 
 int	validate_is_range_int(int argc, char *argv[])
 {
-	int	i;
+	int			i;
+	long int	argv_num;
 
 	i = 1;
 	while (i < argc)
 	{
-		if(ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN)
+		argv_num = ft_atoli(argv[i]);
+		if(argv_num > INT_MAX || argv_num < INT_MIN)
 			return (0);
 		i++;
 	}
@@ -72,9 +74,11 @@ int	is_all_digit(const char *str)
 	int	i;
 
 	i = 0;
+	if (*str == '-' || *str == '+')
+		i++;
 	while (i < ft_strlen(str))
 	{
-		if(!ft_isdigit(str[0]))
+		if(!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}

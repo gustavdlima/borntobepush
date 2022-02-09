@@ -3,11 +3,13 @@
 [ ] terminar operações: rra rrb rrr
 	rods
 [ ] Liberar memória
-[ ] Validar Duplicatas
+[x] Validar Duplicatas
+	moa
 [x] Validar se argv é numérico
 	moa
 [x] Validar se o número cabe dentro de int
 	moa
 [ ] O algoritmo de sort :')
-[ ] Criar função que valide o integer overflow
+[x] Criar função que valide o integer overflow
+	moa | rods
 [ ]	Fazer normalização(indexação) da lista
