@@ -19,18 +19,16 @@ void	ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new)
 
 void	ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new)
 {
-	t_doubly_list	*aux;
-
 	if (!lst || !new)
 		return ;
 	if (*lst == NULL)
 		*lst = new;
 	else
 	{
-		aux = *lst;
-		aux->prev = new;
-		new->next = aux;
 		new->prev = NULL;
+		new->next = *lst;
+		(*lst)->prev = new;
+		(*lst) = new;
 	}
 }
 
