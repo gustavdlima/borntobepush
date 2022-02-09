@@ -4,6 +4,10 @@
 	rods
 [ ] Liberar memória
 [ ] Validar Duplicatas
-[ ] Validar se argv é numérico
-[ ] Validar se o número cabe dentro de int
+[x] Validar se argv é numérico
+	moa
+[x] Validar se o número cabe dentro de int
+	moa
 [ ] O algoritmo de sort :')
+[ ] Criar função que valide o integer overflow
+[ ]	Fazer normalização(indexação) da lista
