@@ -1,15 +1,19 @@
 [x] terminar operações: ra rb rr
 	rods
-[ ] terminar operações: rra rrb rrr
-	rods
-[ ] Liberar memória
 [x] Validar Duplicatas
 	moa
 [x] Validar se argv é numérico
 	moa
 [x] Validar se o número cabe dentro de int
 	moa
-[ ] O algoritmo de sort :')
 [x] Criar função que valide o integer overflow
 	moa | rods
 [ ]	Fazer normalização(indexação) da lista
+[ ] terminar operações: rra rrb rrr
+	rods
+[ ] refatorar o print das operações (duplas) e as operações
+	Moa
+[ ] Liberar memória
+[ ] O algoritmo de sort :')
+
+-----//////--------//////// MUDANDO PRO KANBAN DO GITHUB \\\\\\\\-------\\\-----
