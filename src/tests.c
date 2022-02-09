@@ -21,6 +21,13 @@ void	print_stack(t_doubly_list *stack)
 	}
 }
 
+void print_stacks(t_stacks *stacks)
+{
+	printf("stack_a : \n");
+	print_stack(stacks->stack_a);
+	printf("stack_b : \n");
+	print_stack(stacks->stack_b);
+}
 // int main()
 // {
 // 	t_doubly_list element1;
