@@ -58,3 +58,16 @@ t_doubly_list	*ft_doubly_lstnew(int content)
 	}
 	return (element);
 }
+
+int	ft_doubly_lstsize(t_doubly_list *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}

@@ -22,6 +22,7 @@ t_doubly_list	*ft_doubly_lstlast(t_doubly_list *lst);
 void			ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new);
 void			ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new);
 t_doubly_list	*ft_doubly_lstnew(int content);
+int				ft_doubly_lstsize(t_doubly_list *lst);
 
 // push swap utils
 int		is_sorted_asc(t_doubly_list *stack);
