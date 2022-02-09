@@ -1,5 +1,24 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+# define RESET   "\033[0m"		 /* Reset color to default */
+# define BLACK   "\033[30m"      /* Black */
+# define RED     "\033[31m"      /* Red */
+# define GREEN   "\033[32m"      /* Green */
+# define YELLOW  "\033[33m"      /* Yellow */
+# define BLUE    "\033[34m"      /* Blue */
+# define MAGENTA "\033[35m"      /* Magenta */
+# define CYAN    "\033[36m"      /* Cyan */
+# define WHITE   "\033[37m"      /* White */
+# define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+# define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
+# define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
+# define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
+# define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
+# define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
+# define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
+# define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
 # include "libft.h"
 # include <stdio.h>
@@ -26,7 +45,10 @@ int				ft_doubly_lstsize(t_doubly_list *lst);
 
 // push swap utils
 int		is_sorted_asc(t_doubly_list *stack);
+int		already_insert(t_doubly_list *stack, int num);
 void	initialise(t_stacks *stacks);
+int		validate_is_range_int(int argc, char *argv[]);
+int		validate_is_all_digit(int argc, char *argv[]);
 void	free_stack(t_doubly_list *stack);
 void	free_stacks(t_stacks *stacks);
 
