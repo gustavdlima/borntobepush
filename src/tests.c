@@ -3,18 +3,21 @@
 
 void	print_stack(t_doubly_list *stack)
 {
-	while (stack)
+	printf("prev:\t\tcontent\t\tnext:\n-------------------------------------\n");
+	if (ft_doubly_lstsize(stack) == 1)
+		printf("[NULL]\t<-\t%i\t->\t[NULL]\n", stack->content);
+	else
 	{
-		if (stack->prev == NULL)
-			printf("\nprev ->    [NULL]\n");
-		else
-			printf("prev ->    [%d]\n", stack->prev->content);
-		printf("content -> [%d]\n", stack->content);
-		if (stack->next == NULL)
-			printf("next ->    [NULL]\n\n");
-		else
-			printf("next ->    [%d]\n\n", stack->next->content);
-		stack = stack->next;
+		while (stack)
+		{
+			if (stack->prev == NULL)
+				printf("[NULL]\t<-\t%i\t->\t%i\n", stack->content, stack->next->content);
+			else if (stack->next == NULL)
+				printf("%i\t<-\t%i\t->\t[NULL]\n", stack->prev->content, stack->content);
+			else
+				printf("%i\t<-\t%i\t->\t%i\n", stack->prev->content, stack->content, stack->next->content);
+			stack = stack->next;
+		}
 	}
 }
 
