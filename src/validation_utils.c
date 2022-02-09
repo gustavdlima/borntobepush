@@ -12,6 +12,7 @@ void	initialise(t_stacks *stacks)
 int	validate_input(t_stacks *stacks, int argc, char *argv[])
 {
 	int			i;
+	int			argv_num;
 	// char	**split_args;
 
 	printf("... validating input\n");
@@ -29,12 +30,15 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 	// {
 		// monta a stack a;
 		if(!validate_is_range_int(argc, argv) || !validate_is_all_digit(argc, argv))
-			write(1, BOLDRED"Numeros maiores que INT ou contem strings\n"RESET, 69);
+			return (write(1, BOLDRED"Numeros maiores que INT ou contem strings\n"RESET, 69));
 		initialise(stacks);
 		i = 1;
 		while (argv[i])
 		{
-			ft_doubly_lstadd_back(&(stacks->stack_a), ft_doubly_lstnew(ft_atoi(argv[i])));
+			argv_num = ft_atoi(argv[i]);
+			if(already_insert(stacks->stack_a, argv_num))
+				return (printf(BOLDRED"Existem Duplicatas"RESET));
+			ft_doubly_lstadd_back(&(stacks->stack_a), ft_doubly_lstnew(argv_num));
 			i++;
 		}
 		// i = 10;
