@@ -17,7 +17,7 @@ void	ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new)
 	}
 }
 
-void	*ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new)
+void	ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new)
 {
 	t_doubly_list	*aux;
 

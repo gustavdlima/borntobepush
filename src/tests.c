@@ -1,4 +1,23 @@
+#include "push_swap.h"
 #include <stdio.h>
+
+void	print_stack(t_doubly_list *stack)
+{
+	while (stack)
+	{
+		if (stack->prev == NULL)
+			printf("\nprev ->    [NULL]\n");
+		else
+			printf("prev ->    [%d]\n", stack->prev->content);
+		printf("content -> [%d]\n", stack->content);
+		if (stack->next == NULL)
+			printf("next ->    [NULL]\n\n");
+		else
+			printf("next ->    [%d]\n\n", stack->next->content);
+		stack = stack->next;
+	}
+}
+
 // int main()
 // {
 // 	t_doubly_list element1;

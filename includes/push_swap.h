@@ -23,4 +23,21 @@ void			ft_doubly_lstadd_front(t_doubly_list **lst, t_doubly_list *new);
 void			ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new);
 t_doubly_list	*ft_doubly_lstnew(int content);
 
+// push swap utils
+int		is_sorted_asc(t_doubly_list *stack);
+void	initialise(t_stacks *stacks);
+void	free_stack(t_doubly_list *stack);
+void	free_stacks(t_stacks *stacks);
+
+// -------------------------------------------- VALIDATIONS
+// validation_utils.c
+int	validate_input(t_stacks *stacks, int argc, char *argv[]);
+
+// -------------------------------------------- PUSH SWAP
+// push_swap.c
+void	push_swap(t_stacks *stacks);
+
+// -------------------------------------------- PRA DELETAR DEPOIS
+void	print_stack(t_doubly_list *stack);
+
 #endif
