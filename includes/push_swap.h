@@ -51,6 +51,7 @@ void	pb(t_stacks *stacks);
 // operation_rotate.c
 void	ra(t_stacks *stacks);
 void	rb(t_stacks *stacks);
+void	rr(t_stacks *stacks);
 
 // operation_reverse_rotate.c
 void	rra(t_stacks *stacks);
