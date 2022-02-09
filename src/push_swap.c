@@ -3,12 +3,9 @@
 void	push_swap(t_stacks *stacks)
 {
 	print_stacks(stacks);
-	pb(stacks);
-	pb(stacks);
-	pb(stacks);
-	rb(stacks);
-	rb(stacks);
-	ra(stacks);
+	rra(stacks);
+	rra(stacks);
+	rra(stacks);
 	print_stacks(stacks);
 }
 

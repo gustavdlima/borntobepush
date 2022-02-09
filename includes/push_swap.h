@@ -52,6 +52,9 @@ void	pb(t_stacks *stacks);
 void	ra(t_stacks *stacks);
 void	rb(t_stacks *stacks);
 
+// operation_reverse_rotate.c
+void	rra(t_stacks *stacks);
+
 // -------------------------------------------- PRA DELETAR DEPOIS
 void	print_stack(t_doubly_list *stack);
 void	print_stacks(t_stacks *stacks);
