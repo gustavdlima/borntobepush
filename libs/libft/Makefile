@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-SOURCES			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c
+SOURCES			=	ft_atoi.c ft_atoli.c ft_bzero.c ft_calloc.c ft_isalnum.c
 SOURCES			+=	ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c
 SOURCES			+=	ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c
 SOURCES			+=	ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c

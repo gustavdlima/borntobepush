@@ -46,6 +46,16 @@ typedef struct s_list
 int		ft_atoi(const char *str);
 
 /**
+ * @brief Converts the string argument str to an integer (type long int).
+ *
+ * @param str This is the string representation of an integral number.
+ * @return This function returns the converted integral number as a long int
+ * value.
+ * If no valid conversion could be performed, it returns zero.
+ */
+long int	ft_atoli(const char *str);
+
+/**
  * @brief Checks if the passed character is alphanumeric.
  *
  * @param c This is the character to be checked.
