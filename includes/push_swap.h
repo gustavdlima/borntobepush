@@ -57,6 +57,9 @@ int				validate_input(t_stacks *stacks, int argc, char *argv[]);
 // -------------------------------------------- PUSH SWAP
 // push_swap.c
 void			push_swap(t_stacks *stacks);
+// sort.c
+void	sort(t_stacks *stacks);
+void	sort_three(t_stacks *stacks);
 
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c
