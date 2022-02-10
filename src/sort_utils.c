@@ -12,7 +12,7 @@ int	ft_sqrt(int nb)
 		if (n * n == nb)
 			return (n);
 		else if (n * n > nb)
-			return (0);
+			return (n - 1);
 		n++;
 	}
 	return (0);
