@@ -18,7 +18,7 @@ static int	validate_is_range_int(int argc, char *argv[])
 
 static int	is_all_digit(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (*str == '-' || *str == '+')

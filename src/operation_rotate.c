@@ -37,8 +37,6 @@ void	rb(t_stacks *stacks, int flag)
 /* rotate a and rotate b at the same time. */
 void	rr(t_stacks *stacks)
 {
-	t_doubly_list	*temp;
-
 	ra(stacks, 0);
 	rb(stacks, 0);
 	ft_putendl_fd("rr", 1);

@@ -1,7 +1,7 @@
 NAME	= push_swap
 
 CC	= gcc
-CFLAGS	= -g
+CFLAGS	= -g -Wall -Werror -Wextra
 RM	= rm -f
 VALGRIND =	valgrind --leak-check=full --show-leak-kinds=all \
 			--track-origins=yes -q --tool=memcheck

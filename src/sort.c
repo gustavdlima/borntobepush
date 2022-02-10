@@ -42,9 +42,6 @@ void	sort_three(t_stacks *stacks)
 
 void	sort_five(t_stacks *stacks)
 {
-	t_doubly_list	*aux;
-
-	aux = stacks->stack_a;
 	if (stacks->stack_a->index > stacks->stack_a->next->index &&
 		is_sorted_asc(stacks->stack_a->next->next))
 	{
@@ -55,10 +52,13 @@ void	sort_five(t_stacks *stacks)
 	{
 		while (ft_doubly_lstsize(stacks->stack_a) != 3)
 		{
-			send_to_top(stacks, 0);
+			send_to_top_a(stacks, 0);
 			pb(stacks);
-			send_to_top(stacks, 1);
-			pb(stacks);
+			if (ft_doubly_lstsize(stacks->stack_a) == 5)
+			{
+				send_to_top_a(stacks, 1);
+				pb(stacks);
+			}
 		}
 		sort_three(stacks);
 		pa(stacks);
@@ -67,7 +67,7 @@ void	sort_five(t_stacks *stacks)
 }
 
 
-void	send_to_top(t_stacks *stacks, int index)
+void	send_to_top_a(t_stacks *stacks, int index)
 {
 	int	position;
 
@@ -98,4 +98,5 @@ int	find_index(t_stacks *stacks, int index_size)
 		pivot = pivot->next;
 		i++;
 	}
+	return (-1);
 }
