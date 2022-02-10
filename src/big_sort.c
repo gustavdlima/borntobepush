@@ -6,23 +6,23 @@ Função que divide em grupos e retorna o numero de grupos
 int	split_in_groups(t_stacks *stacks)
 {
 	int	groups;
-	int	max_value;
-	int	*big;
+	int	max_index;
+	int	counter;
 
 	groups = ft_sqrt(stacks->stack_size);
-	big = (int *)malloc(sizeof(int) * groups);
-	max_value = stacks->stack_size / groups;
-	while (max_value != stacks->stack_size)
+	stacks->max_values = (int *)malloc(sizeof(int) * groups);
+	max_index = stacks->stack_size / groups;
+	counter = 0;
+	while (max_index != stacks->stack_size)
 	{
-		if (groups % stacks->stack_size != 0)
-
-
+		if (groups % stacks->stack_size != 0 && counter == groups - 1)
+		{
+			max_index++;
+		}
+		stacks->max_values[counter] = max_index;
+		counter++;
+		max_index += max_index;
 	}
-
-
-	stack 10
-	grupos 3
-	3 3 4
 	return (groups);
 }
 
