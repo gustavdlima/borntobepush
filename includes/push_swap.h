@@ -62,7 +62,9 @@ void			push_swap(t_stacks *stacks);
 // sort.c
 void	sort(t_stacks *stacks);
 void	sort_three(t_stacks *stacks);
-
+void	sort_five(t_stacks *stacks);
+int		find_index(t_stacks *stacks, int index_size);
+void	send_to_top(t_stacks *stacks, int index);
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c
 void			sa(t_stacks *stacks, int flag);
