@@ -12,6 +12,7 @@ void	sort(t_stacks *stacks)
 	// else
 		// algoritmo principal;
 }
+
 void	sort_three(t_stacks *stacks)
 {
 	int	first;
@@ -54,7 +55,7 @@ void	sort_five(t_stacks *stacks)
 		{
 			send_to_top_a(stacks, 0);
 			pb(stacks);
-			if (ft_doubly_lstsize(stacks->stack_a) == 5)
+			if (ft_doubly_lstsize(stacks->stack_a) == 4)
 			{
 				send_to_top_a(stacks, 1);
 				pb(stacks);
@@ -65,7 +66,6 @@ void	sort_five(t_stacks *stacks)
 		pa(stacks);
 	}
 }
-
 
 void	send_to_top_a(t_stacks *stacks, int index)
 {
@@ -89,7 +89,7 @@ int	find_index(t_stacks *stacks, int index_size)
 	int				i;
 	t_doubly_list	*pivot;
 
-	pivot = stacks->stack_a; 
+	pivot = stacks->stack_a;
 	i = 0;
 	while (pivot)
 	{
