@@ -65,6 +65,9 @@ void	sort_three(t_stacks *stacks);
 void	sort_five(t_stacks *stacks);
 int		find_index(t_stacks *stacks, int index_size);
 void	send_to_top_a(t_stacks *stacks, int index);
+// sort_utils.c
+int	ft_sqrt(int nb);
+
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c
 void			sa(t_stacks *stacks, int flag);

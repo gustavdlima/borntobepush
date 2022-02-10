@@ -6,14 +6,28 @@ Função que divide em grupos e retorna o numero de grupos
 int	split_in_groups(t_stacks *stacks)
 {
 	int	groups;
-	int	lst_size;
+	int	max_value;
+	int	*big;
 
-	groups = 0;
-	
+	groups = ft_sqrt(stacks->stack_size);
+	big = (int *)malloc(sizeof(int) * groups);
+	max_value = stacks->stack_size / groups;
+	while (max_value != stacks->stack_size)
+	{
+		if (groups % stacks->stack_size != 0)
 
 
+	}
+
+
+	stack 10
+	grupos 3
+	3 3 4
 	return (groups);
 }
+
+// quantidade de elemento em cada grupo
+// maior elemento de cada grupo
 
 /*
 Função auxiliar que escaneia a stack_a verificando se ainda restam itens
@@ -35,25 +49,21 @@ void	parse_to_push(t_stacks *stacks, int groups)
 	}
 }
 
-Group 0
-1
-2
-3
-4
-5
+// Group 0
+// 1
+// 2
+// 3
 
-Group 1
-6
-7
-8
-9
-10
+// Group 1
+// 4
+// 5
+// 6
 
-Group 3
-11
-12
-13
-14
+// Group 3
+// 7
+// 8
+// 9
+// 10
 
 //Dividir a stack em grupos. Como será feita essa divisão?
 //Definir o índice máximo de cada grupo o limitador na hora de separar
