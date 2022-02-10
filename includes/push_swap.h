@@ -44,45 +44,42 @@ void			ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new);
 t_doubly_list	*ft_doubly_lstnew(int content);
 int				ft_doubly_lstsize(t_doubly_list *lst);
 
-// push swap utils
-int		is_sorted_asc(t_doubly_list *stack);
-int		check_for_duplicate(t_doubly_list *stack, int num);
-void	initialise(t_stacks *stacks);
-int		validate_is_range_int(int argc, char *argv[]);
-int		validate_is_all_digit(int argc, char *argv[]);
-void	free_stack(t_doubly_list *stack);
-void	free_stacks(t_stacks *stacks);
+// push_swap_utils.c
+void			initialise(t_stacks *stacks);
+int				is_sorted_asc(t_doubly_list *stack);
+void			free_stack(t_doubly_list *stack);
+void			free_stacks(t_stacks *stacks);
 
 // -------------------------------------------- VALIDATIONS
 // validation_utils.c
-int	validate_input(t_stacks *stacks, int argc, char *argv[]);
+int				validate_input(t_stacks *stacks, int argc, char *argv[]);
 
 // -------------------------------------------- PUSH SWAP
 // push_swap.c
-void	push_swap(t_stacks *stacks);
+void			push_swap(t_stacks *stacks);
 
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c
-void	sa(t_stacks *stacks, int flag);
-void	sb(t_stacks *stacks, int flag);
-void	ss(t_stacks *stacks);
+void			sa(t_stacks *stacks, int flag);
+void			sb(t_stacks *stacks, int flag);
+void			ss(t_stacks *stacks);
 
 // operation_push.c
-void	pa(t_stacks *stacks);
-void	pb(t_stacks *stacks);
+void			pa(t_stacks *stacks);
+void			pb(t_stacks *stacks);
 
 // operation_rotate.c
-void	ra(t_stacks *stacks, int flag);
-void	rb(t_stacks *stacks, int flag);
-void	rr(t_stacks *stacks);
+void			ra(t_stacks *stacks, int flag);
+void			rb(t_stacks *stacks, int flag);
+void			rr(t_stacks *stacks);
 
 // operation_reverse_rotate.c
-void	rra(t_stacks *stacks, int flag);
-void	rrb(t_stacks *stacks, int flag);
-void	rrr(t_stacks *stacks);
+void			rra(t_stacks *stacks, int flag);
+void			rrb(t_stacks *stacks, int flag);
+void			rrr(t_stacks *stacks);
 
-// -------------------------------------------- PRA DELETAR DEPOIS
-void	print_stack(t_doubly_list *stack);
-void	print_stacks(t_stacks *stacks);
+// -------------------------------------------- TESTS
+void			print_stack(t_doubly_list *stack);
+void			print_stacks(t_stacks *stacks);
 
 #endif

@@ -1,5 +1,14 @@
 #include "push_swap.h"
 
+void	initialise(t_stacks *stacks)
+{
+	stacks->stack_a = NULL;
+	stacks->stack_b = NULL;
+	stacks->stack_size = 0;
+	printf("stacks initialised successfully\n");
+	return ;
+}
+
 int	is_sorted_asc(t_doubly_list *stack)
 {
 	while (stack && stack->next)

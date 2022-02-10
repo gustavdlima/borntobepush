@@ -10,9 +10,9 @@
 	moa | rods
 [x] terminar operações: rra rrb rrr
 	rods
-[ ]	Fazer normalização(indexação) da lista
-[ ] refatorar o print das operações (duplas) e as operações
+[x] refatorar o print das operações (duplas) e as operações
 	Moa
+[ ]	Fazer normalização(indexação) da lista
 [ ] Liberar memória
 [ ] O algoritmo de sort :')
 
