@@ -3,19 +3,19 @@
 
 void	print_stack(t_doubly_list *stack)
 {
-	printf("prev:\t\tcontent\t\tnext:\n-------------------------------------\n");
+	printf("index:\tprev:\t\tcontent\t\tnext:\n-------------------------------------\n");
 	if (ft_doubly_lstsize(stack) == 1)
-		printf("[NULL]\t<-\t%i\t->\t[NULL]\n", stack->content);
+		printf("[0]\t[NULL]\t<-\t%i\t->\t[NULL]\n", stack->content);
 	else
 	{
 		while (stack)
 		{
 			if (stack->prev == NULL)
-				printf("[NULL]\t<-\t%i\t->\t%i\n", stack->content, stack->next->content);
+				printf("[%i]\t[NULL]\t<-\t%i\t->\t%i\n", stack->index, stack->content, stack->next->content);
 			else if (stack->next == NULL)
-				printf("%i\t<-\t%i\t->\t[NULL]\n\n", stack->prev->content, stack->content);
+				printf("[%i]\t%i\t<-\t%i\t->\t[NULL]\n\n", stack->index, stack->prev->content, stack->content);
 			else
-				printf("%i\t<-\t%i\t->\t%i\n", stack->prev->content, stack->content, stack->next->content);
+				printf("[%i]\t%i\t<-\t%i\t->\t%i\n", stack->index, stack->prev->content, stack->content, stack->next->content);
 			stack = stack->next;
 		}
 	}

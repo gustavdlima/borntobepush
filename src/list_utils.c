@@ -51,6 +51,7 @@ t_doubly_list	*ft_doubly_lstnew(int content)
 	if (element)
 	{
 		element->content = content;
+		element->index = 0;
 		element->next = NULL;
 		element->prev = NULL;
 	}
