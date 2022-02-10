@@ -2,15 +2,15 @@
 
 void	sort(t_stacks *stacks)
 {
-	if (ft_doubly_lstsize(stacks->stack_a) <= 3)
-	{
+	int	list_size;
+
+	list_size = ft_doubly_lstsize(stacks->stack_a);
+	if (list_size <= 3)
 		sort_three(stacks);
-	}
-	if (ft_doubly_lstsize(stacks->stack_a) > 3
-			&& ft_doubly_lstsize(stacks->stack_a) <= 5)
-	{
+	else if (list_size <= 5)
 		sort_five(stacks);
-	}
+	// else
+		// algoritmo principal;
 }
 void	sort_three(t_stacks *stacks)
 {
@@ -45,6 +45,12 @@ void	sort_five(t_stacks *stacks)
 	t_doubly_list	*aux;
 
 	aux = stacks->stack_a;
+	if (stacks->stack_a->index > stacks->stack_a->next->index &&
+		is_sorted_asc(stacks->stack_a->next->next))
+	{
+		sa(stacks, 1);
+		return ;
+	}
 	while (!is_sorted_asc(stacks->stack_a))
 	{
 		while (ft_doubly_lstsize(stacks->stack_a) != 3)
@@ -55,8 +61,8 @@ void	sort_five(t_stacks *stacks)
 			pb(stacks);
 		}
 		sort_three(stacks);
-		pb(stacks);
-		pb(stacks);
+		pa(stacks);
+		pa(stacks);
 	}
 }
 
@@ -69,29 +75,27 @@ void	send_to_top(t_stacks *stacks, int index)
 	if (position <= ft_doubly_lstsize(stacks->stack_a) / 2)
 	{
 		while (stacks->stack_a->index != index)
-		{
 			ra(stacks, 1);
-		}
 	}
 	else
 	{
 		while (stacks->stack_a->index != index)
-		{
 			rra(stacks, 1);
-		}
 	}
 }
 
 int	find_index(t_stacks *stacks, int index_size)
 {
-	int	i;
+	int				i;
+	t_doubly_list	*pivot;
 
+	pivot = stacks->stack_a; 
 	i = 0;
-	while (stacks->stack_a)
+	while (pivot)
 	{
-		if (stacks->stack_a->index == index_size)
+		if (pivot->index == index_size)
 			return (i);
-		stacks->stack_a = stacks->stack_a->next;
+		pivot = pivot->next;
 		i++;
 	}
 }

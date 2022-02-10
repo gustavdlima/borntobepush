@@ -11,7 +11,7 @@ void	pa(t_stacks *stacks)
 		return ;
 	first_element_stack_a = stacks->stack_b;
 	stacks->stack_b = stacks->stack_b->next;
-	if (ft_doubly_lstsize(stacks->stack_a) > 0)
+	if (ft_doubly_lstsize(stacks->stack_b) > 0)
 		stacks->stack_b->prev = NULL;
 	first_element_stack_a->next = NULL;
 	if (!stacks->stack_a)

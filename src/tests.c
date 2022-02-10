@@ -3,7 +3,7 @@
 
 void	print_stack(t_doubly_list *stack)
 {
-	printf("index:\tprev:\t\tcontent\t\tnext:\n-------------------------------------\n");
+	printf("index:\tprev:\t\tcontent\t\tnext:\n---------------------------------------------\n");
 	if (ft_doubly_lstsize(stack) == 1)
 		printf("[0]\t[NULL]\t<-\t%i\t->\t[NULL]\n", stack->content);
 	else
