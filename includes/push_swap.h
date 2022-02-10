@@ -63,8 +63,8 @@ void	push_swap(t_stacks *stacks);
 
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c
-void	sa(t_stacks *stacks);
-void	sb(t_stacks *stacks);
+void	sa(t_stacks *stacks, int flag);
+void	sb(t_stacks *stacks, int flag);
 void	ss(t_stacks *stacks);
 
 // operation_push.c
@@ -72,8 +72,8 @@ void	pa(t_stacks *stacks);
 void	pb(t_stacks *stacks);
 
 // operation_rotate.c
-void	ra(t_stacks *stacks);
-void	rb(t_stacks *stacks);
+void	ra(t_stacks *stacks, int flag);
+void	rb(t_stacks *stacks, int flag);
 void	rr(t_stacks *stacks);
 
 // operation_reverse_rotate.c

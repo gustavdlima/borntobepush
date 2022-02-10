@@ -8,9 +8,9 @@ void	push_swap(t_stacks *stacks)
 	pb(stacks);
 	pb(stacks);
 	print_stacks(stacks);
-	rrr(stacks);
-	rrr(stacks);
-	rrr(stacks);
+	rb(stacks, 1);
+	rb(stacks, 1);
+	ss(stacks);
 	print_stacks(stacks);
 }
 
