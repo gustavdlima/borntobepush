@@ -24,13 +24,13 @@ int	split_in_groups(t_stacks *stacks)
 	No final optamos por ter 22 groups com 21 elementos e 1 grupo com 38 ao invés de
 	23 groups com 21 elementos e 1 grupo com 17 elementos 
 	*/
-	max_index = stacks->stack_size / groups;		// 120/10 = 12
+	max_index = stacks->stack_size / groups;		// 500/23 = 21
 	counter = 0;						
-	while (max_index != stacks->stack_size)	//	119 groups = 10
+	while (max_index < stacks->stack_size)	//	119 groups = 10
 	{
 		if (stacks->stack_size % groups != 0 && counter == groups - 1)
-			max_index++;
-		stacks->max_values[counter] = max_index - 1;
+			max_index = stacks->stack_size;
+		stacks->max_values[counter] = max_index - 1; //42 - 1 = 41
 		counter++;
 		max_index += max_index;
 	}
