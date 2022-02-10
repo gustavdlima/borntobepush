@@ -35,6 +35,7 @@ typedef struct s_stacks{
 	int				stack_size;
 	t_doubly_list	*stack_a;
 	t_doubly_list	*stack_b;
+	int				*max_values;
 }				t_stacks;
 
 // -------------------------------------------- UTILS
