@@ -3,6 +3,8 @@ NAME	= push_swap
 CC	= gcc
 CFLAGS	= -g
 RM	= rm -f
+VALGRIND =	valgrind --leak-check=full --show-leak-kinds=all \
+			--track-origins=yes -q --tool=memcheck
 
 INCLUDES_DIR	= ./includes ./libs/libft
 SRC_DIR	= ./src
@@ -43,6 +45,9 @@ fclean: clean
 re:	fclean all
 
 go: all
-	./so_long
+	./$(NAME) $$ARG
 
-.PHONY:	all clean fclean re
+valgrind: $(NAME)
+	$(VALGRIND) ./$(NAME) $$ARG
+
+.PHONY:	all clean fclean re go valgrind

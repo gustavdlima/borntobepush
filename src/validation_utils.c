@@ -65,7 +65,6 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 	if(!validate_is_range_int(argc, argv) || !validate_is_all_digit(argc, argv))
 	{
 		ft_putendl_fd("Error", 1);
-		free_stacks(stacks);
 		return (0);
 	}
 	initialise(stacks);

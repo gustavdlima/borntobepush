@@ -5,7 +5,6 @@ void	initialise(t_stacks *stacks)
 	stacks->stack_a = NULL;
 	stacks->stack_b = NULL;
 	stacks->stack_size = 0;
-	printf("stacks initialised successfully\n");
 	return ;
 }
 
@@ -15,12 +14,10 @@ int	is_sorted_asc(t_doubly_list *stack)
 	{
 		if (stack->content > stack->next->content)
 		{
-			printf("stack not sorted in ascending order !\n");
 			return (0);
 		}
 		stack = stack->next;
 	}
-	printf("stack sorted in ascending order !\n");
 	return (1);
 }
 
@@ -43,5 +40,4 @@ void	free_stacks(t_stacks *stacks)
 		free_stack(stacks->stack_a);
 	if (stacks->stack_b)
 		free_stack(stacks->stack_b);
-	printf("stacks freed successfully\n");
 }

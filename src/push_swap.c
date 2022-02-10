@@ -22,15 +22,12 @@ int	main(int argc, char **argv)
 	{
 		if (validate_input(&stacks, argc, argv) == 1)
 		{
-			printf("input is valid ! !\n");
 			if (!is_sorted_asc(stacks.stack_a))
 			{
-				printf("colocar a função sort aqui!\n");
 				push_swap(&stacks);
 			}
+			free_stacks(&stacks);
 		}
-	// lembrar de dar o free_stacks depois de encerrar o algoritmo
-	// free_stacks(stacks);
 	}
 	return 0;
 }
