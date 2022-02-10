@@ -9,8 +9,8 @@ void	sort(t_stacks *stacks)
 		sort_three(stacks);
 	else if (list_size <= 5)
 		sort_five(stacks);
-	// else
-		// algoritmo principal;
+	else
+		big_sort(stacks);;
 }
 
 void	sort_three(t_stacks *stacks)

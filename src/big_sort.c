@@ -9,13 +9,18 @@ int	split_in_groups(t_stacks *stacks)
 	int	max_index;
 	int	counter;
 
-	groups = ft_sqrt(stacks->stack_size);
+					// stack_size = 115
+	groups = ft_sqrt(stacks->stack_size);			// groups = 10
+	if (stacks->stack_size % groups)	// stack_size % groups == 5
+		groups++;									// groups = 11
 	stacks->max_values = (int *)malloc(sizeof(int) * groups);
-	max_index = stacks->stack_size / groups;
-	counter = 0;
-	while (max_index != stacks->stack_size)
+	// os 10 primeiros grupos preencho com stack_size/groups elementos, e o último grupo com o q sobrar
+	
+	max_index = stacks->stack_size / groups;		// 120/10 = 12
+	counter = 0;						
+	while (max_index != stacks->stack_size)	//	119 groups = 10
 	{
-		if (groups % stacks->stack_size != 0 && counter == groups - 1)
+		if (stacks->stack_size % groups != 0 && counter == groups - 1)
 			max_index++;
 		stacks->max_values[counter] = max_index - 1;
 		counter++;
@@ -23,6 +28,34 @@ int	split_in_groups(t_stacks *stacks)
 	}
 	return (groups);
 }
+
+/*
+100 elementos iniciais na lista
+a lista se dividirá então em sqrt(100) = 10 segmentos
+cada segmento terá # total (100) / # segmentos (10) = 10 elementos
+10 grupos x 10 elementos = 100 elementos == 0100 elementos iniciais
+
+devolvendo o próximo quadrado perfeito:
+105 elementos iniciais na lista
+a lista se dividirá então em sqrt(105) = 11 segmentos
+cada segmento terá # total (105) / # segmentos (11) = 9
+11 grupos x 9 elementos = 99 elementos != 105 elementos iniciais
+
+devolvendo o quadrado perfeito anterior:
+105 elementos iniciais na lista
+a lista se dividirá então em sqrt(105) = 9 segmentos
+cada segmento terá # total (105) / # segmentos (9) = 11 elementos
+9 grupos x 11 elementos = 99 elementos != 105 elementos iniciais
+
+
+
+
+
+
+
+
+
+*/
 
 // quantidade de elemento em cada grupo
 // maior elemento de cada grupo
@@ -66,3 +99,8 @@ void	parse_to_push(t_stacks *stacks, int groups)
 //Dividir a stack em grupos. Como será feita essa divisão?
 //Definir o índice máximo de cada grupo o limitador na hora de separar
 //
+
+void	big_sort(t_stacks *stacks)
+{
+	split_in_groups(stacks);
+}
