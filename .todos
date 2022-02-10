@@ -8,9 +8,9 @@
 	moa
 [x] Criar função que valide o integer overflow
 	moa | rods
-[ ]	Fazer normalização(indexação) da lista
-[ ] terminar operações: rra rrb rrr
+[x] terminar operações: rra rrb rrr
 	rods
+[ ]	Fazer normalização(indexação) da lista
 [ ] refatorar o print das operações (duplas) e as operações
 	Moa
 [ ] Liberar memória

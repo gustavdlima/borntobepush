@@ -46,7 +46,7 @@ int				ft_doubly_lstsize(t_doubly_list *lst);
 
 // push swap utils
 int		is_sorted_asc(t_doubly_list *stack);
-int		already_insert(t_doubly_list *stack, int num);
+int		check_for_duplicate(t_doubly_list *stack, int num);
 void	initialise(t_stacks *stacks);
 int		validate_is_range_int(int argc, char *argv[]);
 int		validate_is_all_digit(int argc, char *argv[]);
@@ -77,8 +77,9 @@ void	rb(t_stacks *stacks);
 void	rr(t_stacks *stacks);
 
 // operation_reverse_rotate.c
-void	rra(t_stacks *stacks);
-void	rrb(t_stacks *stacks);
+void	rra(t_stacks *stacks, int flag);
+void	rrb(t_stacks *stacks, int flag);
+void	rrr(t_stacks *stacks);
 
 // -------------------------------------------- PRA DELETAR DEPOIS
 void	print_stack(t_doubly_list *stack);

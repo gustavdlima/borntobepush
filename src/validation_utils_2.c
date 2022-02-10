@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	already_insert(t_doubly_list *stack, int num)
+int	check_for_duplicate(t_doubly_list *stack, int num)
 {
 	while(stack)
 	{
