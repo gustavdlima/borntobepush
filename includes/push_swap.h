@@ -25,15 +25,16 @@
 # include <stdio.h>
 
 typedef struct s_doubly_list{
-	int		content;
+	int						content;
+	int						index;
 	struct s_doubly_list	*next;
 	struct s_doubly_list	*prev;
 }				t_doubly_list;
 
 typedef struct s_stacks{
+	int				stack_size;
 	t_doubly_list	*stack_a;
 	t_doubly_list	*stack_b;
-	int				stack_size;
 }				t_stacks;
 
 // -------------------------------------------- UTILS
@@ -45,6 +46,7 @@ t_doubly_list	*ft_doubly_lstnew(int content);
 int				ft_doubly_lstsize(t_doubly_list *lst);
 
 // push_swap_utils.c
+void			normalize(t_stacks *stacks);
 void			initialise(t_stacks *stacks);
 int				is_sorted_asc(t_doubly_list *stack);
 void			free_stack(t_doubly_list *stack);
