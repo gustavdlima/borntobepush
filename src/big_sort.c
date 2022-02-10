@@ -17,7 +17,7 @@ int	split_in_groups(t_stacks *stacks)
 	{
 		if (groups % stacks->stack_size != 0 && counter == groups - 1)
 			max_index++;
-		stacks->max_values[counter] = max_index;
+		stacks->max_values[counter] = max_index - 1;
 		counter++;
 		max_index += max_index;
 	}
