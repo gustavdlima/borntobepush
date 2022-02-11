@@ -36,13 +36,45 @@ void	sorting_groups(t_stacks *stacks)
 		/* find elements that we are looking for */
 		while (counter_elements <= stacks->max_values[counter_groups])
 		{
-			if (stacks->stack_a->index <= stacks->max_values[counter_groups])
+/*
+[ ] [ ] [ ] [18 19 20 21 22 23] [24 25 26 27 28 29 30]
+		// encontra o número do grupo mais próximo possível
+		// critério de desempate: o menor índice !!!!!!!!!!!!!!
+		// 19 26 [6] 3 29 27 11 8 12 22 10 1 14 16 9 21 15 24 25 20 0 7 13 18 17 4 2 30 23 [5] 28
+		26 29 27 24 25 30 28 
+		
+		[19] [23] [18] [20] [21] [22] [12] [14] [16] [15] [17] [13] [7] [9] [10] [8] [11] [6] [3] [1] [0] [4] [2] [5] 
+
+*/
+			int index_head;
+			int index_tail;
+			int ops_to_push_head;
+			int ops_to_push_tail;
+			index_head = find_group_element("down", counter_groups);
+			index_tail = find_group_element("up", counter_groups);
+			ops_to_push_head = calculate_ops_to_push(index_head);
+			ops_to_push_tail = calculate_ops_to_push(index_tail);
+			calculate_ops_to_push()
 			{
-				pb(stacks);
-				counter_elements++;
+				int	count_operations;
+				send_to_top_b
+			}
+			if (ops_to_push_head > ops_to_push_tail)
+			{
+					//
+			}
+			else if (ops_to_push_head < ops_to_push_tail)
+			{
+					//
 			}
 			else
-				ra(stacks, 1);
+			{
+				if (index_head < index_tail)
+					send_to_top_a(index_head);
+				else
+					send_to_top_a(index_tail);
+			}
+			pb(stacks);
 		}
 		counter_groups++;
 	}
