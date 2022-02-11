@@ -71,7 +71,7 @@ void	send_to_top_a(t_stacks *stacks, int index)
 {
 	int	position;
 
-	position = find_index(stacks, index);
+	position = find_index(stacks->stack_a, index);
 	if (position <= ft_doubly_lstsize(stacks->stack_a) / 2)
 	{
 		while (stacks->stack_a->index != index)
@@ -88,7 +88,7 @@ void	send_to_top_b(t_stacks *stacks, int index)
 {
 	int	position;
 
-	position = find_index(stacks, index);
+	position = find_index(stacks->stack_b, index);
 	if (position <= ft_doubly_lstsize(stacks->stack_b) / 2)
 	{
 		while (stacks->stack_b->index != index)
@@ -101,12 +101,12 @@ void	send_to_top_b(t_stacks *stacks, int index)
 	}
 }
 
-int	find_index(t_stacks *stacks, int index_size)
+int	find_index(t_doubly_list *stack, int index_size)
 {
 	int				i;
 	t_doubly_list	*pivot;
 
-	pivot = stacks->stack_a;
+	pivot = stack;
 	i = 0;
 	while (pivot)
 	{
