@@ -2,9 +2,9 @@
 
 void	push_swap(t_stacks *stacks)
 {
-	// print_stacks(stacks);
+	print_stacks(stacks);
 	sort(stacks);
-	// print_stacks(stacks);
+	print_stacks(stacks);
 }
 
 int	main(int argc, char **argv)

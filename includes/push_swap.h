@@ -35,10 +35,11 @@ typedef struct s_doubly_list{
 }				t_doubly_list;
 
 typedef struct s_stacks{
-	int				stack_size;
 	t_doubly_list	*stack_a;
 	t_doubly_list	*stack_b;
 	int				*max_values;
+	int				groups;
+	int				stack_size;
 }				t_stacks;
 
 // -------------------------------------------- UTILS
@@ -69,11 +70,16 @@ void	sort_three(t_stacks *stacks);
 void	sort_five(t_stacks *stacks);
 int		find_index(t_stacks *stacks, int index_size);
 void	send_to_top_a(t_stacks *stacks, int index);
-void	big_sort(t_stacks *stacks);
-// sort_utils.c
 
+// --------------------------------------------  SORT UTILS
+// sort_utils.c
 int	ft_sqrt(int nb);
-int	split_in_groups(t_stacks *stacks);
+
+// --------------------------------------------  BIG SORT
+// big_sort.c
+void	big_sort(t_stacks *stacks);
+void	split_in_groups(t_stacks *stacks);
+void	sorting_groups(t_stacks *stacks);
 
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c

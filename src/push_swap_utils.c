@@ -5,6 +5,7 @@ void	initialise(t_stacks *stacks)
 	stacks->stack_a = NULL;
 	stacks->stack_b = NULL;
 	stacks->stack_size = 0;
+	stacks->groups = 0;
 	return ;
 }
 

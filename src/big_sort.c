@@ -3,27 +3,50 @@
 /*
 Função que divide em grupos e retorna o numero de grupos
 */
-int	split_in_groups(t_stacks *stacks)
+void	split_in_groups(t_stacks *stacks)
 {
-	int	groups;
 	int	max_index;
 	int	counter;
 
-	groups = ft_sqrt(stacks->stack_size);
-	if (stacks->stack_size % groups)
-		groups++;
-	stacks->max_values = (int *)malloc(sizeof(int) * groups);
-	max_index = stacks->stack_size / groups;
+	stacks->groups = ft_sqrt(stacks->stack_size);
+	if (stacks->stack_size % stacks->groups)
+		stacks->groups++;
+	stacks->max_values = (int *)malloc(sizeof(int) * stacks->groups);
+	max_index = stacks->stack_size / stacks->groups;
 	counter = 0;
 	while (max_index <= stacks->stack_size)
 	{
-		if (stacks->stack_size % groups != 0 && counter == groups - 1)
+		if (stacks->stack_size % stacks->groups != 0 && counter == stacks->groups - 1)
 			max_index = stacks->stack_size;
 		stacks->max_values[counter] = max_index - 1;
 		counter++;
-		max_index += stacks->stack_size / groups;
+		max_index += stacks->stack_size / stacks->groups;
 	}
-	return (groups);
+}
+
+void	sorting_groups(t_stacks *stacks)
+{
+	int	counter_groups;
+	int	counter_elements;
+
+	counter_groups = 0;
+	counter_elements = 0;
+	while (counter_groups < stacks->groups)
+	{
+		/* find elements that we are looking for */
+		while (counter_elements <= stacks->max_values[counter_groups])
+		{
+			if (stacks->stack_a->index <= stacks->max_values[counter_groups])
+			{
+				pb(stacks);
+				counter_elements++;
+			}
+			else
+				ra(stacks, 1);
+		}
+		print_stack(stacks->stack_b);
+		counter_groups++;
+	}
 }
 
 /*
@@ -53,4 +76,5 @@ do grupo atual
 void	big_sort(t_stacks *stacks)
 {
 	split_in_groups(stacks);
+	sorting_groups(stacks);
 }
