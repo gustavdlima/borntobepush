@@ -84,6 +84,23 @@ void	send_to_top_a(t_stacks *stacks, int index)
 	}
 }
 
+void	send_to_top_b(t_stacks *stacks, int index)
+{
+	int	position;
+
+	position = find_index(stacks, index);
+	if (position <= ft_doubly_lstsize(stacks->stack_b) / 2)
+	{
+		while (stacks->stack_b->index != index)
+			rb(stacks, 1);
+	}
+	else
+	{
+		while (stacks->stack_b->index != index)
+			rrb(stacks, 1);
+	}
+}
+
 int	find_index(t_stacks *stacks, int index_size)
 {
 	int				i;

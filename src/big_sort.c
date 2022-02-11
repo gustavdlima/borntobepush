@@ -44,7 +44,6 @@ void	sorting_groups(t_stacks *stacks)
 			else
 				ra(stacks, 1);
 		}
-		print_stack(stacks->stack_b);
 		counter_groups++;
 	}
 }
@@ -72,9 +71,22 @@ do grupo atual
 //Dividir a stack em grupos. Como será feita essa divisão?
 //Definir o índice máximo de cada grupo o limitador na hora de separar
 //
+void	sort_and_push_back_to_a(t_stacks *stacks)
+{
+	int	index;
+
+	index = stacks->stack_size;
+	while(--index >= 0)
+	{
+		send_to_top_b(stacks, index);
+		pa(stacks);
+	}
+	return ;
+}
 
 void	big_sort(t_stacks *stacks)
 {
 	split_in_groups(stacks);
 	sorting_groups(stacks);
+	sort_and_push_back_to_a(stacks);
 }

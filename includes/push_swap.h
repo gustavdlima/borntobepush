@@ -70,6 +70,7 @@ void	sort_three(t_stacks *stacks);
 void	sort_five(t_stacks *stacks);
 int		find_index(t_stacks *stacks, int index_size);
 void	send_to_top_a(t_stacks *stacks, int index);
+void	send_to_top_b(t_stacks *stacks, int index);
 
 // --------------------------------------------  SORT UTILS
 // sort_utils.c
