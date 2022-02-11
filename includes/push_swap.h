@@ -81,6 +81,9 @@ int	ft_sqrt(int nb);
 void	big_sort(t_stacks *stacks);
 void	split_in_groups(t_stacks *stacks);
 void	sorting_groups(t_stacks *stacks);
+// big_sort_utils.c
+int	find_group_tail(t_stacks *stacks, int group);
+int	find_group_head(t_stacks *stacks, int group);
 
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c
