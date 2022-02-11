@@ -10,7 +10,7 @@ void	sort(t_stacks *stacks)
 	else if (list_size <= 5)
 		sort_five(stacks);
 	else
-		big_sort(stacks);;
+		big_sort(stacks);
 }
 
 void	sort_three(t_stacks *stacks)

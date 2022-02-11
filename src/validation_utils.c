@@ -81,7 +81,7 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 		ft_doubly_lstadd_back(&(stacks->stack_a), ft_doubly_lstnew(argv_num));
 		i++;
 	}
-	stacks->stack_size = i;
+	stacks->stack_size = i - 1;
 	normalize(stacks);
 	return (1);
 }
