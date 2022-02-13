@@ -47,7 +47,7 @@ void	sorting_groups(t_stacks *stacks)
 	{
 		if (count_small_elements == stacks->max_values[count_small_groups])
 			count_small_groups++;
-		if (count_big_elements > 0
+		if (count_big_groups > 0
 			&& count_big_elements == stacks->max_values[count_big_groups - 1])
 			count_big_groups--;
 		if (stacks->stack_a->index <= stacks->max_values[count_small_groups])
