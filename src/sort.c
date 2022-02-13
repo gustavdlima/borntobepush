@@ -78,8 +78,7 @@ void	send_to_top_a(t_stacks *stacks, int index)
 		while (stacks->stack_a->index != index)
 		{
 			difference = stacks->stack_a->index - stacks->stack_a->next->index;
-
-			if (difference == -1 && stacks->stack_a->next-> index != position)
+			if (difference == -1 && stacks->stack_a->next->index != index)
 				sa(stacks, 1);
 			if (stacks->stack_a->next->index == position
 				&& stacks->stack_a->index == position - 1)
@@ -94,7 +93,7 @@ void	send_to_top_a(t_stacks *stacks, int index)
 		{
 			difference = stacks->stack_a->index - stacks->stack_a->next->index;
 
-			if (difference == -1 && stacks->stack_a->next-> index != position)
+			if (difference == -1 && stacks->stack_a->next->index != index)
 				sa(stacks, 1);
 			if (stacks->stack_a->next->index == position
 				&& stacks->stack_a->index == position - 1)
@@ -117,7 +116,7 @@ void	send_to_top_b(t_stacks *stacks, int index)
 		{
 			difference = stacks->stack_b->index - stacks->stack_b->next->index;
 
-			if (difference == -1 && stacks->stack_b->next-> index != position)
+			if (difference == -1 && stacks->stack_b->next->index != index)
 				sb(stacks, 1);
 			if (stacks->stack_b->next->index == position
 				&& stacks->stack_b->index == position - 1)
@@ -132,7 +131,7 @@ void	send_to_top_b(t_stacks *stacks, int index)
 		{
 			difference = stacks->stack_b->index - stacks->stack_b->next->index;
 
-			if (difference == -1 && stacks->stack_b->next-> index != position)
+			if (difference == -1 && stacks->stack_b->next-> index != index)
 				sb(stacks, 1);
 			if (stacks->stack_b->next->index == position
 				&& stacks->stack_b->index == position - 1)

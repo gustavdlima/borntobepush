@@ -9,7 +9,7 @@ static int	validate_is_range_int(int argc, char *argv[])
 	while (i < argc)
 	{
 		argv_num = ft_atoli(argv[i]);
-		if(argv_num > INT_MAX || argv_num < INT_MIN)
+		if (argv_num > INT_MAX || argv_num < INT_MIN)
 			return (0);
 		i++;
 	}
@@ -25,7 +25,7 @@ static int	is_all_digit(const char *str)
 		i++;
 	while (i < ft_strlen(str))
 	{
-		if(!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}
@@ -39,8 +39,8 @@ static int	validate_is_all_digit(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		if(!is_all_digit(argv[i]))
-			return(0);
+		if (!is_all_digit(argv[i]))
+			return (0);
 		i++;
 	}
 	return (1);
@@ -48,9 +48,9 @@ static int	validate_is_all_digit(int argc, char *argv[])
 
 static int	check_for_duplicate(t_doubly_list *stack, int num)
 {
-	while(stack)
+	while (stack)
 	{
-		if(stack->content == num)
+		if (stack->content == num)
 			return (1);
 		stack = stack->next;
 	}
@@ -62,7 +62,7 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 	int			i;
 	int			argv_num;
 
-	if(!validate_is_range_int(argc, argv) || !validate_is_all_digit(argc, argv))
+	if (!validate_is_range_int(argc, argv) || !validate_is_all_digit(argc, argv))
 	{
 		ft_putendl_fd("Error", 1);
 		return (0);
@@ -72,7 +72,7 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 	while (argv[i])
 	{
 		argv_num = ft_atoi(argv[i]);
-		if(check_for_duplicate(stacks->stack_a, argv_num))
+		if (check_for_duplicate(stacks->stack_a, argv_num))
 		{
 			ft_putendl_fd("Error", 1);
 			free_stacks(stacks);
