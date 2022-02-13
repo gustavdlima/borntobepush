@@ -92,7 +92,13 @@ void	send_to_top_b(t_stacks *stacks, int index)
 	if (position <= ft_doubly_lstsize(stacks->stack_b) / 2)
 	{
 		while (stacks->stack_b->index != index)
-			rb(stacks, 1);
+		{
+			if (stacks->stack_b->next->index == position
+				&& stacks->stack_b->index == position - 1)
+				sb(stacks, 1);
+			else
+				rb(stacks, 1);
+		}
 	}
 	else
 	{
