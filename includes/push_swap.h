@@ -83,9 +83,9 @@ void			sorting_groups(t_stacks *stacks);
 // big_sort_utils.c
 int				find_group_tail(t_stacks *stacks, int group);
 int				find_group_head(t_stacks *stacks, int group);
-void			rotate_to_top(int count, t_stacks *stacks);
-void			rev_rotate_to_top(int count, t_stacks *stacks);
-void			choose_element_to_send_to_top(t_stacks *stacks,
+int				rotate_to_top(int count, t_stacks *stacks, int count_back);
+int				rev_rotate_to_top(int count, t_stacks *stacks, int count_back);
+void			choose_element_to_send_to_top(const t_stacks *stacks,
 					int count_groups);
 
 // -------------------------------------------- OPERATION SWAP

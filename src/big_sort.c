@@ -47,29 +47,6 @@ void	sorting_groups(t_stacks *stacks)
 	}
 }
 
-/*
-Função auxiliar que escaneia a stack_a verificando se ainda restam itens
-do grupo atual
-*/
-
-// void	parse_to_push(t_stacks *stacks, int groups)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < groups)
-// 	{
-// 		if ()
-// 		{
-// 			//push a_to_b;
-// 		}
-// 		i++;
-// 	}
-// }
-
-//Dividir a stack em grupos. Como será feita essa divisão?
-//Definir o índice máximo de cada grupo o limitador na hora de separar
-//
 void	sort_and_push_back_to_a(t_stacks *stacks)
 {
 	int	index;
