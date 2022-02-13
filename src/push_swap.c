@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 				push_swap(&stacks);
 			}
 			free_stacks(&stacks);
+			if (stacks.stack_size > 5)
+				free(stacks.max_values);
 		}
 	}
 	return 0;

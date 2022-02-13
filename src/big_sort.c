@@ -40,14 +40,14 @@ void	sorting_groups(t_stacks *stacks)
 	count_small_elements = 0;
 	count_big_groups = stacks->groups - 1;
 	count_big_elements = stacks->max_values[stacks->groups - 1];
-	count_rbs = 0;	
+	count_rbs = 0;
 	// counter_elements = 0;
-	
+
 	while (stacks->stack_a)
 	{
 		if (count_small_elements == stacks->max_values[count_small_groups])
 			count_small_groups++;
-		if (count_big_elements > 0
+		if (count_big_groups > 0
 			&& count_big_elements == stacks->max_values[count_big_groups - 1])
 			count_big_groups--;
 		if (stacks->stack_a->index <= stacks->max_values[count_small_groups])
