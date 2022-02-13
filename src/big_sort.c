@@ -29,21 +29,53 @@ void	split_in_groups(t_stacks *stacks)
 
 void	sorting_groups(t_stacks *stacks)
 {
-	int	counter_groups;
-	int	counter_elements;
+	int	count_small_groups;
+	int	count_small_elements;
+	int	count_big_groups;
+	int	count_big_elements;
+	int	count_rbs;
+	// int	counter_elements;
 
-	counter_groups = 0;
-	counter_elements = 0;
-	while (counter_groups < stacks->groups)
+	count_small_groups = 0;
+	count_small_elements = 0;
+	count_big_groups = stacks->groups - 1;
+	count_big_elements = stacks->max_values[stacks->groups - 1];
+	count_rbs = 0;	
+	// counter_elements = 0;
+	
+	while (stacks->stack_a)
 	{
-		/* find elements that we are looking for */
-		while (counter_elements <= stacks->max_values[counter_groups])
+		if (count_small_elements == stacks->max_values[count_small_groups])
+			count_small_groups++;
+		if (count_big_elements > 0
+			&& count_big_elements == stacks->max_values[count_big_groups - 1])
+			count_big_groups--;
+		if (stacks->stack_a->index <= stacks->max_values[count_small_groups])
 		{
-			choose_element_to_send_to_top(stacks, counter_groups);
-			pb(stacks);
-			counter_elements++;
+			while (count_rbs > 0)
+			{
+				rb(stacks, 1);
+				count_rbs--;
+			}
+			pb(stacks);		// com certeza enviou um dos itens pequenos
+			count_small_elements++;
 		}
-		counter_groups++;
+		else if (stacks->stack_a->index <= stacks->max_values[count_big_groups]
+				&& stacks->stack_a->index > stacks->max_values[count_big_groups - 1])
+		{
+			pb(stacks);
+			count_rbs++;
+		}
+		else
+		{
+			if (count_rbs > 0)
+			{
+				rr(stacks);
+				count_rbs--;
+			}
+			else
+				ra(stacks, 1);
+		}
 	}
 }
 
