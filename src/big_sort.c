@@ -64,6 +64,7 @@ void	sorting_groups(t_stacks *stacks)
 				&& stacks->stack_a->index > stacks->max_values[count_big_groups - 1])
 		{
 			pb(stacks);
+			count_big_elements--;
 			count_rbs++;
 		}
 		else
