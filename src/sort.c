@@ -75,12 +75,22 @@ void	send_to_top_a(t_stacks *stacks, int index)
 	if (position <= ft_doubly_lstsize(stacks->stack_a) / 2)
 	{
 		while (stacks->stack_a->index != index)
-			ra(stacks, 1);
+		{
+			if (stacks->stack_a->next->index == position
+				&& stacks->stack_a->index == position - 1)
+				sa(stacks, 1);
+			else
+				ra(stacks, 1);
+		}
 	}
 	else
 	{
 		while (stacks->stack_a->index != index)
-			rra(stacks, 1);
+			if (stacks->stack_a->next->index == position
+				&& stacks->stack_a->index == position - 1)
+				sa(stacks, 1);
+			else
+				rra(stacks, 1);
 	}
 }
 
@@ -103,7 +113,13 @@ void	send_to_top_b(t_stacks *stacks, int index)
 	else
 	{
 		while (stacks->stack_b->index != index)
-			rrb(stacks, 1);
+		{
+			if (stacks->stack_b->next->index == position
+				&& stacks->stack_b->index == position - 1)
+				sb(stacks, 1);
+			else
+				rrb(stacks, 1);
+		}
 	}
 }
 
