@@ -70,34 +70,75 @@ void	sort_five(t_stacks *stacks)
 void	send_to_top_a(t_stacks *stacks, int index)
 {
 	int	position;
+	int	difference;
 
 	position = find_index(stacks->stack_a, index);
 	if (position <= ft_doubly_lstsize(stacks->stack_a) / 2)
 	{
 		while (stacks->stack_a->index != index)
-			ra(stacks, 1);
+		{
+			difference = stacks->stack_a->index - stacks->stack_a->next->index;
+			if (difference == -1 && stacks->stack_a->next->index != index)
+				sa(stacks, 1);
+			if (stacks->stack_a->next->index == index
+				&& stacks->stack_a->index == index - 1)
+				sa(stacks, 1);
+			else
+				ra(stacks, 1);
+		}
 	}
 	else
 	{
 		while (stacks->stack_a->index != index)
-			rra(stacks, 1);
+		{
+			difference = stacks->stack_a->index - stacks->stack_a->next->index;
+
+			if (difference == -1 && stacks->stack_a->next->index != index)
+				sa(stacks, 1);
+			if (stacks->stack_a->next->index == index
+				&& stacks->stack_a->index == index - 1)
+				sa(stacks, 1);
+			else
+				rra(stacks, 1);
+		}
 	}
 }
 
 void	send_to_top_b(t_stacks *stacks, int index)
 {
 	int	position;
+	int	difference;
 
 	position = find_index(stacks->stack_b, index);
 	if (position <= ft_doubly_lstsize(stacks->stack_b) / 2)
 	{
 		while (stacks->stack_b->index != index)
-			rb(stacks, 1);
+		{
+			difference = stacks->stack_b->index - stacks->stack_b->next->index;
+
+			if (difference == -1 && stacks->stack_b->next->index != index)
+				sb(stacks, 1);
+			if (stacks->stack_b->next->index == index
+				&& stacks->stack_b->index == index - 1)
+				sb(stacks, 1);
+			else
+				rb(stacks, 1);
+		}
 	}
 	else
 	{
 		while (stacks->stack_b->index != index)
-			rrb(stacks, 1);
+		{
+			difference = stacks->stack_b->index - stacks->stack_b->next->index;
+
+			if (difference == -1 && stacks->stack_b->next-> index != index)
+				sb(stacks, 1);
+			if (stacks->stack_b->next->index == index
+				&& stacks->stack_b->index == index - 1)
+				sb(stacks, 1);
+			else
+				rrb(stacks, 1);
+		}
 	}
 }
 
