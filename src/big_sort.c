@@ -3,7 +3,7 @@
 /*
 Função que divide em grupos e retorna o numero de grupos
 */
-void	split_in_groups(t_stacks *stacks)
+static void	split_in_groups(t_stacks *stacks)
 {
 	int	max_index;
 	int	counter;
@@ -19,7 +19,8 @@ void	split_in_groups(t_stacks *stacks)
 	counter = 0;
 	while (max_index <= stacks->stack_size)
 	{
-		if (stacks->stack_size % stacks->groups != 0 && counter == stacks->groups - 1)
+		if (stacks->stack_size % stacks->groups != 0
+			&& counter == stacks->groups - 1)
 			max_index = stacks->stack_size;
 		stacks->max_values[counter] = max_index - 1;
 		counter++;
@@ -27,65 +28,41 @@ void	split_in_groups(t_stacks *stacks)
 	}
 }
 
-void	sorting_groups(t_stacks *stacks)
+static void	sorting_groups(t_stacks *stacks)
 {
-	int	count_small_groups;
-	int	count_small_elements;
-	int	count_big_groups;
-	int	count_big_elements;
-	int	count_rbs;
-	// int	counter_elements;
+	t_counts	count;
 
-	count_small_groups = 0;
-	count_small_elements = 0;
-	count_big_groups = stacks->groups - 1;
-	count_big_elements = stacks->max_values[stacks->groups - 1];
-	count_rbs = 0;
-	// counter_elements = 0;
-
+	initialise_counts(&count, stacks);
 	while (stacks->stack_a)
 	{
-		if (count_small_elements == stacks->max_values[count_small_groups])
-			count_small_groups++;
-		if (count_big_groups > 0
-			&& count_big_elements == stacks->max_values[count_big_groups - 1])
-			count_big_groups--;
-		if (stacks->stack_a->index <= stacks->max_values[count_small_groups])
+		if (stacks->stack_a->index <= stacks->max_values[count.small_group])
 		{
-			while (count_rbs > 0)
-			{
-				rb(stacks, 1);
-				count_rbs--;
-			}
-			pb(stacks);		// com certeza enviou um dos itens pequenos
-			count_small_elements++;
+			count.rbs = send_small_element_to_b(count.rbs, stacks);
+			count.small_elements++;
 		}
-		else if (stacks->stack_a->index <= stacks->max_values[count_big_groups]
-				&& stacks->stack_a->index > stacks->max_values[count_big_groups - 1])
+		else if (stacks->stack_a->index <= stacks->max_values[count.big_group]
+			&& stacks->stack_a->index > stacks->max_values[count.big_group - 1])
 		{
 			pb(stacks);
-			count_big_elements--;
-			count_rbs++;
+			count.big_elements--;
+			count.rbs++;
 		}
 		else
-		{
-			if (count_rbs > 0)
-			{
-				rr(stacks);
-				count_rbs--;
-			}
-			else
-				ra(stacks, 1);
-		}
+			count.rbs = rotate_stack_a(count.rbs, stacks);
+		if (count.small_elements == stacks->max_values[count.small_group])
+			count.small_group++;
+		if (count.big_group > 0
+			&& count.big_elements == stacks->max_values[count.big_group - 1])
+			count.big_group--;
 	}
 }
 
-void	sort_and_push_back_to_a(t_stacks *stacks)
+static void	sort_and_push_back_to_a(t_stacks *stacks)
 {
 	int	index;
 
 	index = stacks->stack_size;
-	while(--index >= 0)
+	while (--index >= 0)
 	{
 		send_to_top_b(stacks, index);
 		pa(stacks);
@@ -98,4 +75,5 @@ void	big_sort(t_stacks *stacks)
 	split_in_groups(stacks);
 	sorting_groups(stacks);
 	sort_and_push_back_to_a(stacks);
+	return ;
 }

@@ -1,10 +1,23 @@
 #include "push_swap.h"
 
+void	sort(t_stacks *stacks)
+{
+	int	list_size;
+
+	list_size = ft_doubly_lstsize(stacks->stack_a);
+	if (list_size <= 3)
+		sort_three(stacks);
+	else if (list_size <= 5)
+		sort_five(stacks);
+	else
+		big_sort(stacks);
+	return ;
+}
+
 void	push_swap(t_stacks *stacks)
 {
-	// print_stacks(stacks);
 	sort(stacks);
-	// print_stacks(stacks);
+	return ;
 }
 
 int	main(int argc, char **argv)
@@ -20,9 +33,7 @@ int	main(int argc, char **argv)
 				push_swap(&stacks);
 			}
 			free_stacks(&stacks);
-			if (stacks.stack_size > 5)
-				free(stacks.max_values);
 		}
 	}
-	return 0;
+	return (0);
 }

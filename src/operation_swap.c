@@ -1,8 +1,7 @@
-
 #include "push_swap.h"
 
 /* sa : swap a - swap the first 2 elements at the top of stack a.
-    Do nothing if there is only one or no elements).*/
+	Do nothing if there is only one or no elements).*/
 void	sa(t_stacks *stacks, int flag)
 {
 	t_doubly_list	*new_second;
@@ -24,7 +23,7 @@ void	sa(t_stacks *stacks, int flag)
 }
 
 /* sb : swap b - swap the first 2 elements at the top of stack b.
-    Do nothing if there is only one or no elements).*/
+	Do nothing if there is only one or no elements).*/
 void	sb(t_stacks *stacks, int flag)
 {
 	t_doubly_list	*new_second;

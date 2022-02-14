@@ -2,7 +2,7 @@
 
 int	ft_sqrt(int nb)
 {
-	int n;
+	int	n;
 
 	n = 1;
 	if (nb <= 0)
@@ -16,4 +16,27 @@ int	ft_sqrt(int nb)
 		n++;
 	}
 	return (0);
+}
+
+int	rotate_stack_a(int count_rbs, t_stacks *stacks)
+{
+	if (count_rbs > 0)
+	{
+		rr(stacks);
+		count_rbs--;
+	}
+	else
+		ra(stacks, 1);
+	return (count_rbs);
+}
+
+int	send_small_element_to_b(int count_rbs, t_stacks *stacks)
+{
+	while (count_rbs > 0)
+	{
+		rb(stacks, 1);
+		count_rbs--;
+	}
+	pb(stacks);
+	return (count_rbs);
 }

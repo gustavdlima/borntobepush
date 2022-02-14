@@ -1,18 +1,5 @@
 #include "push_swap.h"
 
-void	sort(t_stacks *stacks)
-{
-	int	list_size;
-
-	list_size = ft_doubly_lstsize(stacks->stack_a);
-	if (list_size <= 3)
-		sort_three(stacks);
-	else if (list_size <= 5)
-		sort_five(stacks);
-	else
-		big_sort(stacks);
-}
-
 void	sort_three(t_stacks *stacks)
 {
 	int	first;
@@ -29,8 +16,8 @@ void	sort_three(t_stacks *stacks)
 	second = stacks->stack_a->next->index;
 	third = stacks->stack_a->next->next->index;
 	if ((first > second && second > third && third < first)
-			|| (first < second && second > third && third > first)
-			|| (first > second && second < third && third > first))
+		|| (first < second && second > third && third > first)
+		|| (first > second && second < third && third > first))
 		sa(stacks, 1);
 	first = stacks->stack_a->index;
 	second = stacks->stack_a->next->index;
@@ -43,8 +30,8 @@ void	sort_three(t_stacks *stacks)
 
 void	sort_five(t_stacks *stacks)
 {
-	if (stacks->stack_a->index > stacks->stack_a->next->index &&
-		is_sorted_asc(stacks->stack_a->next->next))
+	if (stacks->stack_a->index > stacks->stack_a->next->index
+		&& is_sorted_asc(stacks->stack_a->next->next))
 	{
 		sa(stacks, 1);
 		return ;
@@ -70,16 +57,12 @@ void	sort_five(t_stacks *stacks)
 void	send_to_top_a(t_stacks *stacks, int index)
 {
 	int	position;
-	int	difference;
 
 	position = find_index(stacks->stack_a, index);
 	if (position <= ft_doubly_lstsize(stacks->stack_a) / 2)
 	{
 		while (stacks->stack_a->index != index)
 		{
-			difference = stacks->stack_a->index - stacks->stack_a->next->index;
-			if (difference == -1 && stacks->stack_a->next->index != index)
-				sa(stacks, 1);
 			if (stacks->stack_a->next->index == index
 				&& stacks->stack_a->index == index - 1)
 				sa(stacks, 1);
@@ -91,10 +74,6 @@ void	send_to_top_a(t_stacks *stacks, int index)
 	{
 		while (stacks->stack_a->index != index)
 		{
-			difference = stacks->stack_a->index - stacks->stack_a->next->index;
-
-			if (difference == -1 && stacks->stack_a->next->index != index)
-				sa(stacks, 1);
 			if (stacks->stack_a->next->index == index
 				&& stacks->stack_a->index == index - 1)
 				sa(stacks, 1);
@@ -107,17 +86,12 @@ void	send_to_top_a(t_stacks *stacks, int index)
 void	send_to_top_b(t_stacks *stacks, int index)
 {
 	int	position;
-	int	difference;
 
 	position = find_index(stacks->stack_b, index);
 	if (position <= ft_doubly_lstsize(stacks->stack_b) / 2)
 	{
 		while (stacks->stack_b->index != index)
 		{
-			difference = stacks->stack_b->index - stacks->stack_b->next->index;
-
-			if (difference == -1 && stacks->stack_b->next->index != index)
-				sb(stacks, 1);
 			if (stacks->stack_b->next->index == index
 				&& stacks->stack_b->index == index - 1)
 				sb(stacks, 1);
@@ -129,10 +103,6 @@ void	send_to_top_b(t_stacks *stacks, int index)
 	{
 		while (stacks->stack_b->index != index)
 		{
-			difference = stacks->stack_b->index - stacks->stack_b->next->index;
-
-			if (difference == -1 && stacks->stack_b->next-> index != index)
-				sb(stacks, 1);
 			if (stacks->stack_b->next->index == index
 				&& stacks->stack_b->index == index - 1)
 				sb(stacks, 1);

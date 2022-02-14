@@ -39,6 +39,14 @@ typedef struct s_stacks{
 	int				stack_size;
 }				t_stacks;
 
+typedef struct s_counts{
+	int	small_group;
+	int	small_elements;
+	int	big_group;
+	int	big_elements;
+	int	rbs;
+}				t_counts;
+
 // -------------------------------------------- UTILS
 // list_utils.c
 t_doubly_list	*ft_doubly_lstlast(t_doubly_list *lst);
@@ -47,10 +55,13 @@ void			ft_doubly_lstadd_back(t_doubly_list **lst, t_doubly_list *new);
 t_doubly_list	*ft_doubly_lstnew(int content);
 int				ft_doubly_lstsize(t_doubly_list *lst);
 
-// push_swap_utils.c
+// normalize.c
 void			normalize(t_stacks *stacks);
-void			initialise(t_stacks *stacks);
+
+// push_swap_utils.c
 int				is_sorted_asc(t_doubly_list *stack);
+
+// free_utils.c
 void			free_stack(t_doubly_list *stack);
 void			free_stacks(t_stacks *stacks);
 
@@ -58,35 +69,26 @@ void			free_stacks(t_stacks *stacks);
 // validation_utils.c
 int				validate_input(t_stacks *stacks, int argc, char *argv[]);
 
-// -------------------------------------------- PUSH SWAP
-// push_swap.c
-void			push_swap(t_stacks *stacks);
-
+// --------------------------------------------  SORT UTILS
 // sort.c
-void			sort(t_stacks *stacks);
 void			sort_three(t_stacks *stacks);
 void			sort_five(t_stacks *stacks);
 int				find_index(t_doubly_list *stack, int index_size);
 void			send_to_top_a(t_stacks *stacks, int index);
 void			send_to_top_b(t_stacks *stacks, int index);
 
-// --------------------------------------------  SORT UTILS
 // sort_utils.c
 int				ft_sqrt(int nb);
+int				rotate_stack_a(int count_rbs, t_stacks *stacks);
+int				send_small_element_to_b(int count_rbs, t_stacks *stacks);
+
+// initialise_utils.c
+void			initialise_counts(t_counts *counts, t_stacks *stacks);
+void			initialise(t_stacks *stacks);
 
 // --------------------------------------------  BIG SORT
 // big_sort.c
 void			big_sort(t_stacks *stacks);
-void			split_in_groups(t_stacks *stacks);
-void			sorting_groups(t_stacks *stacks);
-
-// big_sort_utils.c
-int				find_group_tail(t_stacks *stacks, int group);
-int				find_group_head(t_stacks *stacks, int group);
-int				rotate_to_top(int count, t_stacks *stacks, int count_back);
-int				rev_rotate_to_top(int count, t_stacks *stacks, int count_back);
-void			choose_element_to_send_to_top(const t_stacks *stacks,
-					int count_groups);
 
 // -------------------------------------------- OPERATION SWAP
 // operations_swap.c

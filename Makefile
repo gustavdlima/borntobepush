@@ -18,7 +18,7 @@ INCLUDES	= $(addprefix -I,$(INCLUDES_DIR))
 SRCS	= tests.c push_swap.c push_swap_utils.c list_utils.c validation_utils.c
 SRCS	+= operation_swap.c operation_push.c normalize.c
 SRCS	+= operation_rotate.c operation_reverse_rotate.c
-SRCS	+= sort.c sort_utils.c big_sort.c big_sort_utils.c
+SRCS	+= sort.c sort_utils.c big_sort.c free_utils.c initialise_utils.c
 
 OBJS	:= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
 SRCS	:= $(addprefix $(SRC_DIR)/,$(SRCS))

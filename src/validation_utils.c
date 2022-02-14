@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static int	validate_is_range_int(int argc, char *argv[])
+static int	is_range_int(int argc, char *argv[])
 {
 	int			i;
 	long int	argv_num;
@@ -16,7 +16,7 @@ static int	validate_is_range_int(int argc, char *argv[])
 	return (1);
 }
 
-static int	is_all_digit(const char *str)
+static int	is_digit_str(const char *str)
 {
 	size_t	i;
 
@@ -32,14 +32,14 @@ static int	is_all_digit(const char *str)
 	return (1);
 }
 
-static int	validate_is_all_digit(int argc, char *argv[])
+static int	is_all_digit(int argc, char *argv[])
 {
 	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (!is_all_digit(argv[i]))
+		if (!is_digit_str(argv[i]))
 			return (0);
 		i++;
 	}
@@ -62,7 +62,7 @@ int	validate_input(t_stacks *stacks, int argc, char *argv[])
 	int			i;
 	int			argv_num;
 
-	if (!validate_is_range_int(argc, argv) || !validate_is_all_digit(argc, argv))
+	if (!is_range_int(argc, argv) || !is_all_digit(argc, argv))
 	{
 		ft_putendl_fd("Error", 1);
 		return (0);
