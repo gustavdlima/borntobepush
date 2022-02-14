@@ -30,12 +30,6 @@ void	sort_three(t_stacks *stacks)
 
 void	sort_five(t_stacks *stacks)
 {
-	if (stacks->stack_a->index > stacks->stack_a->next->index
-		&& is_sorted_asc(stacks->stack_a->next->next))
-	{
-		sa(stacks, 1);
-		return ;
-	}
 	while (!is_sorted_asc(stacks->stack_a))
 	{
 		while (ft_doubly_lstsize(stacks->stack_a) != 3)
