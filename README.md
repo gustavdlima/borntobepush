@@ -1,5 +1,5 @@
 # borntobepush
-Forged by the hands of Gustavo | gusalves, Juliana | jmilson-, Adriano | afaustin, Moacir | mamaro-d and Rods | roaraujo.
+Forged by the hands of **Gustavo | gusalves**, **Juliana | jmilson-**, **Adriano | afaustin**, **Moacir | mamaro-d** and **Rods | roaraujo**.
 
 Special thanks to Adriano | anhigo-s.
 
