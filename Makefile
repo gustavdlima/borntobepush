@@ -8,7 +8,7 @@ VALGRIND =	valgrind --leak-check=full --show-leak-kinds=all \
 
 INCLUDES_DIR	= ./includes ./libs/libft
 SRC_DIR	= ./src
-OBJ_DIR	 = ./build
+OBJ_DIR	 = ./src/build
 
 LIBFT_PATH	 = ./libs/libft
 LIBFT	= $(LIBFT_PATH)/libft.a
