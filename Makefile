@@ -5,7 +5,6 @@ CFLAGS	= -g -Wall -Werror -Wextra
 RM	= rm -f
 VALGRIND =	valgrind --leak-check=full --show-leak-kinds=all \
 			--track-origins=yes -q --tool=memcheck
-
 INCLUDES_DIR	= ./includes ./libs/libft
 SRC_DIR	= ./src
 OBJ_DIR	 = ./src/build
